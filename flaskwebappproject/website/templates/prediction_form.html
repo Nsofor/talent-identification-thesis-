@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Personality Prediction</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='prediction_form.css') }}">
+</head>
+<body>
+
+    {% extends "base.html" %}
+    
+    {% block content %}
+        <h1>Personality Prediction</h1>
+        <form method="POST" action="/predict">
+            <label for="description">Description:</label><br>
+            <input type="text" name="description" required>
+
+            <label for="followers_count">Followers Count:</label><br>
+            <input type="number" name="followers_count" required>
+
+            <label for="friends_count">Friends Count:</label><br>
+            <input type="number" name="friends_count" required>
+
+            <label for="favourites_count">Favourites Count:</label><br>
+            <input type="number" name="favourites_count" required>
+
+            <label for="total_favorite_count">Total Favorite Count:</label><br>
+            <input type="number" name="total_favorite_count" required>
+
+            <label for="total_mentions_count">Total Mentions Count:</label><br>
+            <input type="number" name="total_mentions_count" required>
+
+            <label for="total_media_count">Total Media Count:</label><br>
+            <input type="number" name="total_media_count" required>
+
+            <!-- <input type="submit" value="Predict"> -->
+            <button type="submit" value="Predict">Predict</button>
+        </form>
+
+    {% endblock %}
+</body>
+</html>

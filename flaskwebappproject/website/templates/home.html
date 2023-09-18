@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Player Stats</title>
+</head>
+<body>
+    <h1>Player Statistics</h1>
+    <form method="POST">
+        <label for="player_name">Enter Player Name:</label>
+        <input type="text" name="player_name" required>
+        <button type="submit">Search</button>
+    </form>
+
+    {% if stats_data %}
+        <h2>{{ stats_data.name }}</h2>
+        <p>Goals: {{ stats_data.goals }}</p>
+        <p>Assists: {{ stats_data.assists }}</p>
+        <p>Yellow Cards: {{ stats_data.yellow_cards }}</p>
+        <p>Red Cards: {{ stats_data.red_cards }}</p>
+        <!-- Add more stats here based on your API response -->
+    {% endif %}
+
+    {% if error_message %}
+        <p>{{ error_message }}</p>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player ID Result</title>
+</head>
+<body>
+    <h1>Player ID Result</h1>
+    <hr>
+
+    {% if player_id %}
+        <p>The player's ID is: {{ player_id }}</p>
+    {% else %}
+        <p>Player not found or an error occurred.</p>
+    {% endif %}
+
+    <a href="/">Back to Home</a>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}My Web App{% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}">
+    <!-- Add your CSS links and other head content here -->
+</head>
+<body>
+    <nav class="base-nav">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/search_tweets">Search Tweets</a></li>
+            <li><a href="/player_id_form">Player ID form</a></li>
+            <li><a href="/player_stats/<int:player_id>">Player Statistics</a></li>
+        </ul>
+    </nav>
+    
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

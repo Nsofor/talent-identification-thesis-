@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Player ID</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='player_id_form.css') }}">
+</head>
+<body>
+    <h1>Get Player ID</h1>
+    <form method="POST" action="/player_id">
+        <label for="sport_id">Sport ID:</label><br>
+        <input type="text" id="sport_id" name="sport_id" required>
+
+        <label for="player_name">Player Name:</label><br>
+        <input type="text" id="player_name" name="player_name" required>
+
+        <!-- <input type="submit" value="Get Player ID"> -->
+        <button type="submit" value="Get Player ID">Get Player ID</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Twitter Name Extraction Results</title>
+</head>
+<body>
+    <h1>Twitter Name Extraction Results</h1>
+    {% if names %}
+    <p>Names mentioned in the tweets:</p>
+    <ul>
+        {% for name in names %}
+        <li>{{ name }}</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>{{ message }}</p>
+    {% endif %}
+    <a href="/">Back to Search</a>
+</body>
+</html>

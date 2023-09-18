@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Player Statistics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='player_stats.css') }}">
+</head>
+<body>
+    <h1>Player Statistics</h1>
+    
+    <table>
+        <tr>
+            <th>Season</th>
+            <th>Total Matches Played</th>
+            <th>Total Goals</th>
+            <th>Total Assists</th>
+            <!-- Add more headers for other statistics as needed -->
+        </tr>
+        
+        {% for season_stats in player_stats %}
+        <tr>
+            <td>{{ season_stats['season']['name'] }}</td>
+            <td>{{ season_stats['details'][0]['matches_total'] }}</td>
+            <td>{{ season_stats['details'][1]['goals'] }}</td>
+            <td>{{ season_stats['details'][2]['assists'] }}</td>
+            <!-- Add more table cells for other statistics as needed -->
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Stats Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='search_tweets.css') }}">
+</head>
+<body>
+
+    {% extends "base.html" %}
+
+    {% block title %}Search Tweets{% endblock %}
+
+    {% block content %}
+        <h1>Search Tweets</h1>
+
+        <form method="POST">
+            <label for="search_query">Search Query:</label><br>
+            <input type="text" id="search_query" name="search_query" placeholder="#u21euro talent -is:retweet" value="{{ request.form['search_query'] }}">
+            <br>
+
+            <label for="num_tweets">Number of Tweets to Retrieve:</label><br>
+            <input type="number" id="num_tweets" name="num_tweets" min="1" max="100" value="{{ request.form['num_tweets'] }}">
+            <br>
+
+            <!-- <input type="submit" value="Search"> -->
+            <button type="submit" value="Search">Search</button>
+        </form>
+
+        <h2>Extracted Names:</h2>
+        <ul>
+            {% for name in names %}
+                <li style="font-size: 13px; color: #f2f2f2;">{{ name }}</li>
+            {% endfor %}
+        </ul>
+    {% endblock %}
+
+</body>

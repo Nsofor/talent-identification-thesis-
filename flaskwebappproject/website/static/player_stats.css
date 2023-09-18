@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+    color: #f2f2f2;
+}
+
+body {
+    background-color: #000000;
+}
+
+h1 {
+    color: #f2f2f2;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+}
+
+th,td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #1da1f2;
+    color: white;
+}
+
+/* table td {
+    font-size: 14px;
+} */
