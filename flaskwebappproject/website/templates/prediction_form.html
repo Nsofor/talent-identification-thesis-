@@ -40,6 +40,13 @@
             <button type="submit" value="Predict">Predict</button>
         </form>
 
+        {% if predicted_personality %}
+        <div>
+            <h2>Predicted Personality: {{ predicted_personality }}</h2>
+            <p>Description: {{ personality_description }}</p>
+        </div>
+        {% endif %}
+
     {% endblock %}
 </body>
 </html>

@@ -129,11 +129,38 @@ def predict():
         # Make predictions
         predicted_personality = rf_classifier.predict(user_input_combined)[0]
 
+        # Define descriptions for each personality type
+        personality_descriptions = {
+            'isfj': 'The Protector: ISFJs are empathetic and helpful people. They have a strong feeling of duty and responsibility and are frequently viewed as the carers. They perform well in jobs that require them to look after and assist others.',
+            'infj': 'INFJs are sympathetic and perceptive. They have a strong sense of purpose that drives them, and they frequently promote societal change. They have a talent for perceiving the motives and feelings of others.',
+            'intj': 'The Mastermind: INTJs think strategically and creatively. They are exceptionally analytical and thrive at resolving challenging issues. They frequently establish lofty goals because they have a strong desire to succeed.',
+            'istp': 'The Craftsman: ISTPs are proactive and practical. They excel in conditions that call for rapid thinking and flexibility. They frequently possess technical aptitude.',
+            'isfp': 'The Composer: ISFPs have a creative and independent nature. They appreciate using their creativity to express themselves and have a strong respect for beauty. They respect uniqueness and genuineness.',
+            'infp': 'The Healer, INFP personality type is idealistic and caring. They frequently try to change the world for the better and are driven by strong personal beliefs. They are thoughtful and creative.',
+            'intp': 'The architect INTP personality type is creative and analytical. They are renowned for their insatiable curiosity and enthusiasm for novel concepts. They perform well in occupations that need substantial intellectual effort.',
+            'estp': 'ESTPs are vivacious and action-focused. They frequently enjoy danger and thrill seeking. They thrive in tasks that call for quick decisions.',
+            'esfp': 'The Performer: ESFPs have a lot of energy and are impulsive. They enjoy entertaining people and adore the limelight. They are vivacious and frequently the life of the party.',
+            'enfp': 'The Champion: ENFPs have a lot of energy and creativity. They are motivated by their passions and frequently speak up for topics they support. They naturally have a gift for relating to people.',
+            'entp': 'The visionary ENTP personality type is creative and resourceful. They relish engaging in intellectual debate and intellectual difficulties. They are frequently regarded as idea producers.',
+            'estj': 'The Supervisor: ESTJs are responsible and pragmatic. They are excellent in organisational roles and natural leaders. They value efficiency, structure, and order',
+            'esfj': 'The Providers. They frequently serve as the ”glue” that binds together communities. They perform well in jobs that call for collaboration and people skills.',
+            'enfj': 'ENFJs are charming and empathic, making them excellent teachers. They are born leaders who excite and inspire others. They frequently labour for the greater good and have a strong sense of selflessness.',
+            'entj': 'The Commander: ENTJs are strategic and forceful. They are frequently regarded as decision-makers with natural leadership abilities. They flourish in leadership and management roles.',
+            'istj': 'The Inspector (ISTJ) type is renowned for its dependability and practicality. They take a thorough, organised, and attention to detail-oriented approach to life. They respect custom, strictly adhere to the law, and perform well when given precise assignments.',
+            # Add descriptions for other personality types here
+        }
+
+        # Get the description for the predicted personality
+        personality_description = personality_descriptions.get(predicted_personality, 'Description not available.')
+
         # Prepare the response message
-        response_message = f"Predicted Personality: {predicted_personality}"
+        #response_message = f"Predicted Personality: {predicted_personality}"
+        response_message = f"Predicted Personality: {predicted_personality}\nDescription: {personality_description}"
 
         # Return the predicted personality as a response
-        return response_message
+        #return response_message
+    
+        return render_template('prediction_form.html', predicted_personality=predicted_personality, personality_description=personality_description)
 
 
 #@app.route('/analyze_tweets', methods=['GET', 'POST'])

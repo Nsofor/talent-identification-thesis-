@@ -21,5 +21,15 @@
         <!-- <input type="submit" value="Get Player ID"> -->
         <button type="submit" value="Get Player ID">Get Player ID</button>
     </form>
+
+    {% if player_id is defined %}
+    <div>
+        {% if player_id %}
+        Player ID: {{ player_id }}
+        {% else %}
+        Player not found.
+        {% endif %}
+    </div>
+    {% endif %}
 </body>
 </html>
